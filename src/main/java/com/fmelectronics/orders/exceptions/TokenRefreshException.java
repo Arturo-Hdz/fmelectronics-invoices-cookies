@@ -1,4 +1,4 @@
-package com.fmelectronics.orders.exception;
+package com.fmelectronics.orders.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

@@ -1,4 +1,4 @@
-package com.fmelectronics.orders.repository;
+package com.fmelectronics.orders.repositories;
 
 import com.fmelectronics.orders.models.RefreshToken;
 import com.fmelectronics.orders.models.User;

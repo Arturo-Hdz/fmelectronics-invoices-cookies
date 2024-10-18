@@ -1,4 +1,4 @@
-package com.fmelectronics.orders.repository;
+package com.fmelectronics.orders.repositories;
 
 import com.fmelectronics.orders.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -13,4 +13,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
   Boolean existsByUsername(String username);
 
   Boolean existsByEmail(String email);
+
+  void updatedStatus(long userId);
 }

@@ -1,7 +1,7 @@
 package com.fmelectronics.orders.security.services;
 
 import com.fmelectronics.orders.models.User;
-import com.fmelectronics.orders.repository.UserRepository;
+import com.fmelectronics.orders.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

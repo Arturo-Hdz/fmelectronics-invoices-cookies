@@ -1,6 +1,6 @@
 package com.fmelectronics.orders.advice;
 
-import com.fmelectronics.orders.exception.TokenRefreshException;
+import com.fmelectronics.orders.exceptions.TokenRefreshException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;

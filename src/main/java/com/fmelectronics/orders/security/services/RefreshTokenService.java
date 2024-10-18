@@ -1,9 +1,9 @@
 package com.fmelectronics.orders.security.services;
 
-import com.fmelectronics.orders.exception.TokenRefreshException;
+import com.fmelectronics.orders.exceptions.TokenRefreshException;
 import com.fmelectronics.orders.models.RefreshToken;
-import com.fmelectronics.orders.repository.RefreshTokenRepository;
-import com.fmelectronics.orders.repository.UserRepository;
+import com.fmelectronics.orders.repositories.RefreshTokenRepository;
+import com.fmelectronics.orders.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
