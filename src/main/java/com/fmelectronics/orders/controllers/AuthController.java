@@ -16,6 +16,7 @@ import com.fmelectronics.orders.security.services.RefreshTokenService;
 import com.fmelectronics.orders.security.services.UserDetailsImpl;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseCookie;
@@ -36,6 +37,7 @@ import java.util.stream.Collectors;
 //@CrossOrigin(origins = "http://localhost:8081", maxAge = 3600, allowCredentials="true")
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
+@Slf4j
 @RequestMapping("/api/auth")
 public class AuthController {
   @Autowired
@@ -101,30 +103,36 @@ public class AuthController {
                          encoder.encode(signUpRequest.getPassword()));
 
     Set<String> strRoles = signUpRequest.getRole();
+        log.info("strRoles " + strRoles);
     Set<Role> roles = new HashSet<>();
+//        log.info("roles " + roles);
 
     if (strRoles == null) {
       Role userRole = roleRepository.findByName(ERole.SALESPERSON)
           .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
       roles.add(userRole);
+//          log.info("user roles " + userRole);
     } else {
       strRoles.forEach(role -> {
         switch (role) {
-        case "admin":
+        case "ADMIN":
           Role adminRole = roleRepository.findByName(ERole.ADMIN)
               .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+//              log.info("admin role " + adminRole);
           roles.add(adminRole);
 
           break;
-        case "technician":
-          Role modRole = roleRepository.findByName(ERole.TECHNICIAN)
+        case "TECHNICIAN":
+          Role techRole = roleRepository.findByName(ERole.TECHNICIAN)
               .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-          roles.add(modRole);
+//              log.info("tech roles " + techRole);
+          roles.add(techRole);
 
           break;
         default:
           Role userRole = roleRepository.findByName(ERole.SALESPERSON)
               .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+//              log.info("user role default " + userRole);
           roles.add(userRole);
         }
       });
