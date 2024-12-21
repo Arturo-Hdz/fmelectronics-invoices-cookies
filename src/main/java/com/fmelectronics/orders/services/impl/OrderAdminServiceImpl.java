@@ -121,7 +121,7 @@ public class OrderAdminServiceImpl implements OrderAdminService {
     @Override
     public ResponseEntity<List<Order>> findByStatusOrders(boolean b, Statusorders statusorders)throws NotFoundException {
 //        List<Order> statusOrders2 = orderAdminRepository.findByStatusAndStatusOrdersOrderByIdDesc(true, statusOrders);
-        List<Order> statusOrders2 = orderAdminRepository.searchOrdersByStatusOrders(true, Statusorders.valueOf(statusorders.SOString));
+        List<Order> statusOrders2 = orderAdminRepository.searchOrdersByStatusorders(true, Statusorders.valueOf(statusorders.SOString));
 
         if(statusOrders2.isEmpty()){
             log.info("Not Founds Orders by status and statusorders");

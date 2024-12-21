@@ -16,7 +16,7 @@ public interface OrderTechRepository extends JpaRepository<Order, Long> {
 
     List<Order> findByStatusOrderByIdDesc(boolean status2);
 
-        List<Order> findByStatusAndStatusOrdersOrderByIdDesc(boolean status, String Statusorders);
+        List<Order> findByStatusAndStatusordersOrderByIdDesc(boolean status, String Statusorders);
 
         @Query("SELECT p FROM Order p WHERE p.status=true " +
             "AND p.statusorders='NEW_ORDER' OR p.statusorders='REPAIRED' " +

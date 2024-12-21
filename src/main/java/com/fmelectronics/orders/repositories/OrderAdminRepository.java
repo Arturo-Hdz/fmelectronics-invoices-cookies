@@ -27,25 +27,25 @@ public interface OrderAdminRepository extends JpaRepository<Order, Long> {
 
     Page<Order> findByStatusOrderByIdDesc(boolean status2, Pageable pageable);
 //    Page<Order> findByStatusOrderByIdDesc(String no_order, boolean status2, Pageable pageable);
-    Page<Order> findByNotesContainingAndStatusOrderByIdDesc(String no_order, boolean status2, Pageable pageable);
+    Page<Order> findByNotesContainingAndStatusOrderByIdDesc(String noorder, boolean status2, Pageable pageable);
     Page<Order> findByNotesContainingOrBrandContainingAndStatusOrderByIdDesc(String no_order, String brand, boolean status2, Pageable pageable);
 
     @Query("SELECT p FROM Order p WHERE p.status=true AND p.id=?1")
     public Order OrderById(Integer id);
 
-    List<Order> findByStatusAndStatusOrdersOrderByIdDesc(boolean status, Statusorders statusorders);
+    List<Order> findByStatusAndStatusordersOrderByIdDesc(boolean status, Statusorders statusorders);
     @Query("SELECT p FROM Order p WHERE p.status=?1 AND p.statusorders=?2 Order by p.id Desc")
-    public List<Order> searchOrdersByStatusOrders(boolean status, Statusorders Statusorders);
+    public List<Order> searchOrdersByStatusorders(boolean status, Statusorders Statusorders);
 
     @Query("SELECT p FROM Order p WHERE p.status=true " +
-            "AND p.statusOrders='New_Order' Order by p.id Desc")
+            "AND p.statusorders='New_Order' Order by p.id Desc")
     public List<Order> listNewOrder();
 
             @Query("SELECT p FROM Order p WHERE p.status=true "
-            + " AND p.no_order LIKE %?1%"
+            + " AND p.noorder LIKE %?1%"
             + " OR p.customer_name LIKE %?1%"
             + " OR p.customer_lastname LIKE %?1%"
-            + " OR p.statusOrders LIKE %?1%"
+            + " OR p.statusorders LIKE %?1%"
             + " OR p.brand LIKE %?1%"
             + " OR p.equipment LIKE %?1%"
             + " OR p.tech_name LIKE %?1%"
@@ -70,9 +70,9 @@ public interface OrderAdminRepository extends JpaRepository<Order, Long> {
     long countByStatusOrders(boolean b, Statusorders statusorders);
 
     @Query("SELECT COUNT(s) FROM Order s WHERE s.status = :b AND s.statusorders = :statusorders")
-    long countByStatusOrders2(boolean b, Statusorders statusorders);
+    long countByStatusorders2(boolean b, Statusorders statusorders);
 
-    @Query("SELECT MAX(s.no_order) FROM Order s")
+    @Query("SELECT MAX(s.noorder) FROM Order s")
     long noSerie();
 
 //    Page<Order> findByStatusOrderByIdDesc(boolean status2, Pageable pagingSort);

@@ -117,10 +117,10 @@ public class Order {
 ////        }
 //    }
 
-    public Order(long id, String noorder, Date date, String customername, String customerlastname, String email, String phone, String equipment, String noSerie, String brand, String malfunction, String accesories, String image, String url, String notes, String issues, String solution, Statusorders statusorders, float subtotal, float tax, float total, float labor, String spare1, float cost1, String spare2, float cost2, String spare3, float cost3, String spare4, float cost4, String spare5, float cost5, float sparePartsCost, Date deliveryDate, String techName, boolean contact, boolean status) {
+    public Order(long id, String noorder, Date date, String customer_name, String customer_lastname, String email, String phone, String equipment, String no_serie, String brand, String malfunction, String accessories, String image, String url, String notes, String issues, String solution, Statusorders statusorders, float subtotal, float tax, float total, float labor, String spare1, float cost1, String spare2, float cost2, String spare3, float cost3, String spare4, float cost4, String spare5, float cost5, float spare_parts_cost, Date deliveryDate, String techName, boolean contact, boolean status) {
     }
 
-    public Order(long id, String noorder, Date date, String customername, String customerLastname, String email, String phone, String equipment, String noSerie, String brand, String malfunction, String accesories, String images, String url, String notes, Statusorders statusorders, String techName) {
+    public Order(long id, String noorder, Date date, String customer_name, String customer_lastname, String email, String phone, String equipment, String no_serie, String brand, String malfunction, String accessories, String images, String url, String notes, Statusorders statusorders, String techName) {
     }
 
 }

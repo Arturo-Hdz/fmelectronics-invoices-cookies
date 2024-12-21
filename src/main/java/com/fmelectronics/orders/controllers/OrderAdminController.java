@@ -130,7 +130,7 @@ public class OrderAdminController {
     }
 
     //image
-    @PostMapping("/")
+    @PostMapping("/testimage3")
     public ResponseEntity<OrderDTOImage> saveOrders(@Valid @RequestBody MultipartFile file, OrderDTOImage ordersDTO) throws IOException {
         try {
             OrderDTOImage newOrder = orderAdminService.save(ordersDTO, file);

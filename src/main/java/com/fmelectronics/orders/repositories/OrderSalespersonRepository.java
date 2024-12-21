@@ -16,10 +16,10 @@ public interface OrderSalespersonRepository extends JpaRepository<Order, Long> {
 
     List<Order> findByStatusOrderByIdDesc(boolean status2);
 
-    List<Order> findByStatusAndStatusOrdersOrderByIdDesc(boolean status, String Statusorders);
+    List<Order> findByStatusAndStatusordersOrderByIdDesc(boolean status, String Statusorders);
 
     @Query("SELECT p FROM Order p WHERE p.status=?1"
-            + " AND p.no_order LIKE %?2%"
+            + " AND p.noorder LIKE %?2%"
             + " OR p.customer_name LIKE %?2%"
             + " OR p.customer_lastname LIKE %?2%"
             + " OR p.statusorders LIKE %?2%"

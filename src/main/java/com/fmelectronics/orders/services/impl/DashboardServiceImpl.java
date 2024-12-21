@@ -49,7 +49,7 @@ public class DashboardServiceImpl implements DashboardService{
 
     @Override
     public ResponseEntity<?> countByStatusOrders2(boolean b, Statusorders statusorders)throws NotFoundException {
-        long status_orders2 = orderAdminRepository.countByStatusOrders2(true, Statusorders.valueOf(statusorders.SOString));
+        long status_orders2 = orderAdminRepository.countByStatusorders2(true, Statusorders.valueOf(statusorders.SOString));
         log.info("Founds Status Orders by status true" + status_orders2);
         return new ResponseEntity<>(status_orders2, HttpStatus.OK);
 
